@@ -1,6 +1,12 @@
+#!/bin/bash
+
+norminette ../
+make -C ../ fclean
 make -C ../ all
 cc -Wall -Wextra -Werror main.c ../libftprintf.a
 
-echo "\n\n\n\n"
+echo ""
+echo ""
+echo ""
 
-./a.out
+./a.out $1

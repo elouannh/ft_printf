@@ -12,11 +12,39 @@
 
 #include "ft_printf.h"
 
+int	format_flag(char *str, va_list args)
+{
+	int		i;
+	char	c;
+
+	i = 1;
+	if (!&str[i] || !str[i])
+		return (i);
+	c = str[i];
+	if (c == 'd')
+		i += ft_print_int(va_arg(args, int));
+	if (c == 'c')
+		i += ft_print_char(va_arg(args, char));
+	return (i);
+}
+
 int	ft_parsefmt(char *str, va_list args)
 {
-	(void)str;
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '%')
+		{
+			i += format_flag(&str[i], args);
+			continue ;
+		}
+		ft_putchar_fd(str[i], 1);
+		i++;
+	}
 	(void)args;
-	return (0);
+	return (i);
 }
 
 int	ft_printf(const char *format, ...)

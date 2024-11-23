@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elouannh <elouannh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/23 12:21:49 by elouannh          #+#    #+#             */
-/*   Updated: 2024/11/23 12:21:49 by elouannh         ###   ########.fr       */
+/*   Created: 2024/11/23 17:04:47 by elouannh          #+#    #+#             */
+/*   Updated: 2024/11/23 17:04:47 by elouannh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdio.h>
-# include <stdarg.h>
-# include "libft/libft.h"
-
-int	ft_print_char(char c);
-int	ft_print_int(int n);
-int	ft_printf(const char *format, ...);
-
-#endif
+int	ft_print_char(char c)
+{
+	ft_putchar_fd(c, 1);
+	return (1);
+}

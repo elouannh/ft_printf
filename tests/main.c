@@ -31,11 +31,17 @@ void	run_tests(int test_id)
 		t2 = ft_printf("Ceci est un test\n");
 		print_tests_result(t1, t2);
 	}
+	if (test_id == 1)
+	{
+		t1 = printf("Nombre: %d\nChar: %c\n", 42, 'e');
+		t2 = ft_printf("Nombre: %d\nChar: %c\n", 42, 'e');
+		print_tests_result(t1, t2);
+	}
 }
 
 int	main(int argc, char **argv)
 {
-	run_tests(ft_atoi(argv[0]));
+	run_tests(ft_atoi(argv[1]));
 	(void)argc;
 	return (0);
 }

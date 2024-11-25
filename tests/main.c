@@ -33,8 +33,38 @@ void	run_tests(int test_id)
 	}
 	if (test_id == 1)
 	{
-		t1 = printf("Nombre: %d\nChar: %c\n", 42, 'e');
-		t2 = ft_printf("Nombre: %d\nChar: %c\n", 42, 'e');
+		t1 = printf("Nombre: %d\nChar: %c\n", 42060, 'e');
+		t2 = ft_printf("Nombre: %d\nChar: %c\n", 42060, 'e');
+		print_tests_result(t1, t2);
+	}
+	if (test_id == 2)
+	{
+		t1 = printf("%c%c%c%c\n", 'a', 'b', 'c', 'd');
+		t2 = ft_printf("%c%c%c%c\n", 'a', 'b', 'c', 'd');
+		print_tests_result(t1, t2);
+	}
+	if (test_id == 3)
+	{
+		t1 = printf("%s\n", "Coucou je suis une banane");
+		t2 = ft_printf("%s\n", "Coucou je suis une banane");
+		print_tests_result(t1, t2);
+	}
+	if (test_id == 4)
+	{
+		t1 = printf("%p\n", 0);
+		t2 = ft_printf("%p\n", 0);
+		print_tests_result(t1, t2);
+	}
+	if (test_id == 5)
+	{
+		t1 = printf(" %u %u %u %u %u %u %u\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+		t2 = ft_printf(" %u %u %u %u %u %u %u\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+		print_tests_result(t1, t2);
+	}
+	if (test_id == 6)
+	{
+		t1 = printf("%x %x %x\n", 10, 11, 15);
+		t2 = ft_printf("%x %x %x\n", 10, 11, 15);
 		print_tests_result(t1, t2);
 	}
 }

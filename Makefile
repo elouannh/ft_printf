@@ -6,7 +6,7 @@ AR				:=	ar
 ARFLAGS 		:=	rcs
 RM				:=	rm -rf
 
-SRC				:=	ft_printf ft_print_int ft_print_char
+SRC				:=	ft_printf ft_print_char ft_print_nbrbase ft_print_str
 SRCS 			:=	$(addsuffix .c, $(SRC))
 
 OBJ_DIR			:=	obj
@@ -27,7 +27,7 @@ $(NAME):			$(LIBFT) $(OBJ_DIR) $(OBJS)
 					$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
 $(LIBFT):
-					make -C $(LIBFT_PATH) all
+					make -C $(LIBFT_PATH) all bonus
 
 $(OBJ_DIR):
 					mkdir -p $(OBJ_DIR)

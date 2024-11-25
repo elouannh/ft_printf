@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_int.c                                     :+:      :+:    :+:   */
+/*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elouannh <elouannh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ehosta <ehosta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/23 15:48:36 by elouannh          #+#    #+#             */
-/*   Updated: 2024/11/23 15:48:36 by elouannh         ###   ########.fr       */
+/*   Created: 2024/11/25 13:15:25 by ehosta            #+#    #+#             */
+/*   Updated: 2024/11/25 13:15:25 by ehosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_int(int n)
+int	ft_print_str(char *str, int *prtd)
 {
-	if (n <= -2147483648)
+	if (!str)
 	{
-		ft_putstr_fd("-2147483648", 1);
+		ft_putstr_fd("(null)", 1);
+		*prtd += 6;
 		return (1);
 	}
-	if (n < 0)
+	if (!*str)
 	{
-		ft_putchar_fd('-', 1);
-		n *= -1;
+		ft_putstr_fd("", 1);
+		return (1);
 	}
-	if (n >= 10)
+	while (*str)
 	{
-		ft_putnbr_fd(n / 10, 1);
-		ft_putchar_fd(n % 10 + '0', 1);
+		ft_putchar_fd(*str++, 1);
+		*prtd += 1;
 	}
-	else
-		ft_putchar_fd(n + '0', 1);
 	return (1);
 }

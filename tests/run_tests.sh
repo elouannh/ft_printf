@@ -3,7 +3,7 @@
 norminette ../
 make -C ../ fclean
 make -C ../ all
-cc -Wall -Wextra -Werror main.c ../libftprintf.a
+cc main.c ../libftprintf.a
 
 echo ""
 echo ""

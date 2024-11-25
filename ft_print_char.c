@@ -12,8 +12,9 @@
 
 #include "ft_printf.h"
 
-int	ft_print_char(char c)
+int	ft_print_char(char c, int *prtd)
 {
 	ft_putchar_fd(c, 1);
+	*prtd += 1;
 	return (1);
 }

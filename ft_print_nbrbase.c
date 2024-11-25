@@ -64,9 +64,6 @@ int	ft_print_nbrbase_u(unsigned int n, char *base, int *prtd)
 
 int	ft_print_nbrbase_ptr(unsigned long long n, char *base, int *prtd)
 {
-	size_t	blen;
-
-	blen = ft_strlen(base);
 	if (n == 0)
 	{
 		ft_putstr_fd("(nil)", 1);
@@ -78,10 +75,10 @@ int	ft_print_nbrbase_ptr(unsigned long long n, char *base, int *prtd)
 		ft_putstr_fd("0x", 1);
 		*prtd += 2;
 	}
-	if (n >= (unsigned long long)blen)
+	if (n >= (unsigned long long)ft_strlen(base))
 	{
-		ft_print_nbrbase(n / blen, base, prtd);
-		ft_putchar_fd(base[n % blen], 1);
+		ft_print_nbrbase(n / ft_strlen(base), base, prtd);
+		ft_putchar_fd(base[n % ft_strlen(base)], 1);
 		*prtd += 1;
 	}
 	else
